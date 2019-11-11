@@ -1,0 +1,9 @@
+= Repository Description
+
+This repo contains a number of gradle projects with the purpose of
+testing several scenarios using the kordamp-gradle-plugin suite.
+
+== Project 01: Java, Gradle (groovy)
+
+Java project with three gradle submodules, two of them depending on the first,
+testing the code of project1 both using integration-tests and functional-tests.

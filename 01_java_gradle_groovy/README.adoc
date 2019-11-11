@@ -1,0 +1,31 @@
+= Project Description
+
+* gradle configuration with groovy syntax
+* java projects
+* project1 with production code
+* project2 with integration tests testing the production code from project1
+* project3 with functional tests testing the production code from project2
+
+== Testing
+
+gw allTests
+gw jacocoTestMerge
+
+
+== Analysis
+
+Building the project fails starting with commit 27bfe1fc099cb20dca85cd755df5c98dc0cb7288 of kordamp-gradle-plugins
+
+
+=== Verify the working project setup
+
+Ensure settings.gradle in this project depends on kordamp-gradle-plugin suite 0.29.0.
+
+run
+
+```
+gradlew build
+```
+
+Verify the project builds successfully
+
