@@ -29,3 +29,32 @@ gradlew build
 
 Verify the project builds successfully
 
+
+=== Verify build failure
+
+Build the kordamp-gradle-plugin suite with HEAD pointing to any commit
+between 27bfe1fc099cb20dca85cd755df5c98dc0cb7288..56c34f22a00fad2007c74fd86b76180ca512b110
+and deploy verison 0.30.0-SNAPSHOT to local maven repo.
+
+Change settings.gradle in this project to depend on kordamp-gradle-plugin suite 0.30.0-SNAPSHOT.
+
+```
+gradlew build
+```
+
+observe the following error being thrown while running the `compileIntegrationTestJava` task:
+
+----
+> Task :project2:compileIntegrationTestJava FAILED
+22 actionable tasks: 1 executed, 21 up-to-date
+<-------------> 0% WAITING
+> IDLE
+/home/urs/work/git/forked/kordamp-gradle-test-suite/01_java_gradle_groovy/subprojects/project2/src/integration-test/java/org/kordamp/sample/IntegrationTest.java:27: error: cannot find symbol
+        assertEquals("method1", ClassUnderTest.method1());
+                                ^
+  symbol:   variable ClassUnderTest
+  location: class IntegrationTest
+1 error
+
+FAILURE: Build failed with an exception.
+----
