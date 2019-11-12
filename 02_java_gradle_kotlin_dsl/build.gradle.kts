@@ -80,9 +80,6 @@ subprojects {
 
 tasks {
     withType<JacocoMerge> {
-        // this next line is oboslete (as already configured above in subprojects.config.jacoco) - and also does not help
-        enabled = project.file("src/test").exists()
-
         doFirst {
             println("in module ${project.name}, 'src/test' does ${if (project.file("src/test").exists()) "" else "not "}exist")
         }
