@@ -66,12 +66,6 @@ allprojects {
 subprojects {
     apply plugin: 'java'
 
-    config {
-        jacoco {
-            enabled = project.file('src/test').exists()
-        }
-    }
-
     dependencies {
         testCompile 'junit:junit:4.12'
     }
