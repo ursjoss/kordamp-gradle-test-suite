@@ -44,17 +44,6 @@ config {
                 roles = ['developer']
             }
         }
-
-        repositories {
-            repository {
-                name = 'stagingRelease'
-                url = "${project.buildDir}/repos/staging/release"
-            }
-            repository {
-                name = 'stagingSnapshot'
-                url = "${project.buildDir}/repos/staging/snapshot"
-            }
-        }
     }
 
     licensing {
@@ -64,12 +53,6 @@ config {
                 id = 'Apache-2.0'
             }
         }
-    }
-
-    publishing {
-        signing = true
-        releasesRepository = 'stagingRelease'
-        snapshotsRepository = 'stagingSnapshot'
     }
 }
 

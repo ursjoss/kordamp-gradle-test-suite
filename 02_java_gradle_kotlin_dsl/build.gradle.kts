@@ -62,20 +62,10 @@ allprojects {
         mavenLocal()
         jcenter()
     }
-
-    tasks {
-        val deleteOutFolderTask by registering(Delete::class) {
-            delete("out")
-        }
-        named("clean") {
-            dependsOn(deleteOutFolderTask)
-        }
-    }
 }
 
 subprojects {
     apply<JavaPlugin>()
-    apply<IdeaPlugin>()
 
     dependencies {
         testImplementation("junit:junit:4.12")

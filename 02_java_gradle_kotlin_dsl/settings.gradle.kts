@@ -47,7 +47,7 @@ buildscript {
 
 apply<SettingsPlugin>()
 
-rootProject.name = "01_java_gradle_groovy"
+rootProject.name = "02_java_gradle_kotlin_dsl"
 
 configure<ProjectsExtension> {
     layout = "two-level"
