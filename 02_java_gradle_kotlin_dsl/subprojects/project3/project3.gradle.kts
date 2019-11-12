@@ -1,5 +1,3 @@
-import org.kordamp.gradle.plugin.functionaltest.FunctionalTestPlugin
-
 /*
  * SPDX-License-Identifier: Apache-2.0
  *

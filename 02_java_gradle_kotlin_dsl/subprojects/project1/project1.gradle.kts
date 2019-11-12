@@ -15,3 +15,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+apply<JavaPlugin>()
+
+dependencies {
+    testImplementation("junit:junit:4.12")
+}

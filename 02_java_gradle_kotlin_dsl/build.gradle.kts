@@ -17,7 +17,6 @@
  */
 plugins {
     id("org.kordamp.gradle.project")
-    java
 }
 
 config {
@@ -66,22 +65,8 @@ allprojects {
 
 subprojects {
     apply<JavaPlugin>()
-
-    config {
-        jacoco {
-            enabled = project.file("src/test").exists()
-        }
-    }
-
     dependencies {
+        val testImplementation by configurations
         testImplementation("junit:junit:4.12")
-    }
-}
-
-tasks {
-    withType<JacocoMerge> {
-        doFirst {
-            println("in module ${project.name}, 'src/test' does ${if (project.file("src/test").exists()) "" else "not "}exist")
-        }
     }
 }
