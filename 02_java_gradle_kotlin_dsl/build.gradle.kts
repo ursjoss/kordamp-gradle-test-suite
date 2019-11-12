@@ -17,7 +17,6 @@
  */
 plugins {
     id("org.kordamp.gradle.project")
-    java
 }
 
 config {
@@ -62,17 +61,12 @@ allprojects {
         mavenLocal()
         jcenter()
     }
-
-    config {
-        jacoco {
-            enabled = project.file("src/test").exists()
-        }
-    }
 }
 
 subprojects {
     apply<JavaPlugin>()
     dependencies {
+        val testImplementation by configurations
         testImplementation("junit:junit:4.12")
     }
 }

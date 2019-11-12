@@ -17,6 +17,7 @@
  */
 plugins {
     id("org.kordamp.gradle.integration-test")
+    java
 }
 
 dependencies {
