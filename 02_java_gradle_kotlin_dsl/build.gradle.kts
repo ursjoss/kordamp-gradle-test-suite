@@ -77,3 +77,11 @@ subprojects {
         testImplementation("junit:junit:4.12")
     }
 }
+
+tasks {
+    withType<JacocoMerge> {
+        doFirst {
+            println("in module ${project.name}, 'src/test' does ${if (project.file("src/test").exists()) "" else "not "}exist")
+        }
+    }
+}
