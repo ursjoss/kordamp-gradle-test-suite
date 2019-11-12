@@ -67,6 +67,12 @@ allprojects {
 subprojects {
     apply<JavaPlugin>()
 
+    config {
+        jacoco {
+            enabled = project.file("src/test").exists()
+        }
+    }
+
     dependencies {
         testImplementation("junit:junit:4.12")
     }
