@@ -17,6 +17,7 @@
  */
 plugins {
     id("org.kordamp.gradle.project")
+    java
 }
 
 config {
@@ -66,7 +67,6 @@ allprojects {
 subprojects {
     apply<JavaPlugin>()
     dependencies {
-        val testImplementation by configurations
         testImplementation("junit:junit:4.12")
     }
 }
