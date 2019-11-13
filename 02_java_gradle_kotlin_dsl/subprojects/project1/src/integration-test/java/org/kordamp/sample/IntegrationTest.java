@@ -15,10 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    id("org.kordamp.gradle.integration-test")
-}
+package org.kordamp.sample;
 
-dependencies {
-    testImplementation("junit:junit:4.12")
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class IntegrationTest {
+    @Test
+    public void integration() {
+        assertEquals("method1", ClassUnderTest.method1());
+    }
 }
