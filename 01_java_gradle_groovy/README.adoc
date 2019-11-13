@@ -2,12 +2,16 @@
 
 * gradle configuration with groovy syntax
 * java projects
-* project1 with production code
+* project1 with production code and an integration-test
 * project2 with integration tests testing the production code from project1
 * project3 with functional tests testing the production code from project2
 
 == Testing
 
+```
 gw allTests
 gw jacocoTestMerge
+```
 
+Current issue: the integration test in project1 does not see the production class
+from the main source set of the same module.
