@@ -6,10 +6,12 @@ testing several scenarios using the kordamp-gradle-plugin suite.
 == Project 01: Java, Gradle (groovy)
 
 Java project with three gradle submodules (configured using groovy),
-two of them depending on the first, testing the code of project1 both
-using integration-tests and functional-tests.
+the first one using both unit and integration tests to test some classes
+in the main source set. The other two submodules depend on the first one
+and integration-test (project2) or functional-test (project3) a production
+class from project1.
 
-== Project 02: JAva, Gradle (kotlin DSL)
+== Project 02: Java, Gradle (kotlin DSL)
 
 Java project with three gradle submodules (configured using kotlin DSL),
 two of them depending on the first, testing the code of project1 both
