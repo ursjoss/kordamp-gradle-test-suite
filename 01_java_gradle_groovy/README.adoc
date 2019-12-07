@@ -16,6 +16,6 @@ Commands to be expected to run:
 ```
 gradlew check
 gradlew allTests
-gradlew jacocoTestMerge
-gradlew jacocoTestReport
+gradlew jacocoRootMerge
+gradlew jacocoRootReport
 ```
