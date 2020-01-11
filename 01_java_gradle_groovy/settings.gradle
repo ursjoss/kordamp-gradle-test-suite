@@ -21,7 +21,7 @@ pluginManagement {
         jcenter()
         gradlePluginPortal()
     }
-    def kordampVersion = '0.30.4'
+    def kordampVersion = '0.31.2'
     plugins {
         id 'org.kordamp.gradle.project' version kordampVersion
         id 'org.kordamp.gradle.guide' version kordampVersion
@@ -35,7 +35,7 @@ buildscript {
         mavenLocal()
         gradlePluginPortal()
     }
-    def kordampVersion = '0.30.4'
+    def kordampVersion = '0.31.2'
     dependencies {
         classpath "org.kordamp.gradle:settings-gradle-plugin:$kordampVersion"
     }
