@@ -1,0 +1,22 @@
+= Project Description
+
+* gradle configuration with kotlin DSL syntax
+* kotlin projects
+* project1 with production code, a dummy unit test and an integration test
+* project2 with integration tests testing the production code from project1
+* project3 with functional tests testing the production code from project2
+
+Note: The dummy unit test in project1 prevents `gradlew aggregateJacocoReport` from failing
+due to missing `subprojects\project1\build\jacoco\test.exec`.
+
+== Testing
+
+Commands expected to succeed:
+
+```
+gradlew clean check
+gradlew clean allTests
+gradlew clean aggregateJacocoMerge
+gradlew clean aggregateJacocoReport
+gradlew clean allJacocoReports
+```

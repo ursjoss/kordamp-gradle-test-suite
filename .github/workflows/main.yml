@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         # Abusing os/version as placeholders for the subproject and the gradle tasks
-        os: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl]
+        os: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
         version: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports]
 
     steps:

@@ -16,3 +16,10 @@ class from project1.
 Java project with three gradle submodules (configured using kotlin DSL),
 two of them depending on the first, testing the code of project1 both
 using integration-tests and functional-tests.
+
+
+== Project 03: Kotlin, Gralde (kotlin DSL)
+
+kotlin project with three gradle submodules configured using kotlin DSL),
+two of them depending on the first, testing the code of project1 both
+using integration-tests and functional-tests.
