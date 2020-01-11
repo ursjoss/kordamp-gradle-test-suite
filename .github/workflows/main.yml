@@ -31,6 +31,12 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Cache global .gradle folder
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: global-gradle-${{ hashFiles('**/*.kt*') }}-${{ hashFiles('**/*.java') }}
+
       - name: Check with Gradle
         run: ./gradlew clean ${{ matrix.version }} --no-daemon
-        working-directory: ${{ matrix.os}}
+        working-directory: ${{ matrix.os }}
