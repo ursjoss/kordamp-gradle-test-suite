@@ -20,7 +20,7 @@ jobs:
       matrix:
         # Abusing os/version as placeholders for the subproject and the gradle tasks
         os: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl]
-        version: [check, allTests, jacocoRootMerge, jacocoRootReport]
+        version: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports]
 
     steps:
       - name: Checkout repository
