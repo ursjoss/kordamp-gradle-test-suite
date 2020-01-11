@@ -14,8 +14,8 @@ due to missing `subprojects\project1\build\jacoco\test.exec`.
 Commands to be expected to run:
 
 ```
-gradlew check
-gradlew allTests
-gradlew jacocoRootMerge
-gradlew jacocoRootReport
+gradlew clean check
+gradlew clean allTests
+gradlew clean jacocoRootMerge
+gradlew clean jacocoRootReport
 ```
