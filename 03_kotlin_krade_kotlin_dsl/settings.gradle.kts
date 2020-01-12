@@ -26,7 +26,7 @@ pluginManagement {
     }
     plugins {
         kotlin("jvm") version "1.3.61"
-        val kordampVersion = "0.31.2"
+        val kordampVersion = "0.32.0-SNAPSHOT"
         id("org.kordamp.gradle.kotlin-project") version kordampVersion
         id("org.kordamp.gradle.guide") version kordampVersion
         id("org.kordamp.gradle.integration-test") version kordampVersion
@@ -39,7 +39,7 @@ buildscript {
         mavenLocal()
         gradlePluginPortal()
     }
-    val kordampVersion = "0.31.2"
+    val kordampVersion = "0.32.0-SNAPSHOT"
     dependencies {
         classpath("org.kordamp.gradle:settings-gradle-plugin:$kordampVersion")
     }
