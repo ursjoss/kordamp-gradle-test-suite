@@ -6,9 +6,6 @@
 * project2 with integration tests testing the production code from project1
 * project3 with functional tests testing the production code from project2
 
-Note: The dummy unit test in project1 prevents `gradlew jacocoRootReport` from failing
-due to missing `subprojects\project1\build\jacoco\test.exec`.
-
 == Testing
 
 Commands expected to succeed:
