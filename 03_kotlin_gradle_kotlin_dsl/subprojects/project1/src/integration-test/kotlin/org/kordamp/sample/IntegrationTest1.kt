@@ -20,7 +20,7 @@ package org.kordamp.sample
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class IntegrationTest {
+class IntegrationTest1 {
     @Test
     fun integration() {
         assertEquals("method1", ClassUnderTest.method1())

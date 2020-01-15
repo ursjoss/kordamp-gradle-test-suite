@@ -30,5 +30,4 @@ class HelloWorld2Test {
         // then:
         Assert.assertEquals(answer, "Hello World")
     }
-    
 }
