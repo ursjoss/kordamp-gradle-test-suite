@@ -29,6 +29,7 @@ pluginManagement {
         val kordampVersion = "0.32.0-SNAPSHOT"
         id("org.kordamp.gradle.kotlin-project") version kordampVersion
         id("org.kordamp.gradle.guide") version kordampVersion
+        id("org.kordamp.gradle.detekt") version kordampVersion
         id("org.kordamp.gradle.integration-test") version kordampVersion
         id("org.kordamp.gradle.functional-test") version kordampVersion
     }

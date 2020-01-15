@@ -16,4 +16,7 @@ gradlew clean allTests
 gradlew clean aggregateJacocoMerge
 gradlew clean aggregateJacocoReport
 gradlew clean allJacocoReports
+gradlew clean detekt
+gradlew clean aggregateDetekt
+gradlew clean allDetekt
 ```

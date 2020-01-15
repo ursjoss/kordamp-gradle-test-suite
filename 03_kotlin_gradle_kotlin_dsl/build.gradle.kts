@@ -18,6 +18,7 @@
 plugins {
     kotlin("jvm")
     id("org.kordamp.gradle.kotlin-project")
+    id("org.kordamp.gradle.detekt")
     java
 }
 
@@ -54,6 +55,13 @@ config {
             license {
                 id = "Apache-2.0"
             }
+        }
+    }
+
+    quality {
+        detekt {
+            buildUponDefaultConfig = true
+            toolVersion = "1.4.0"
         }
     }
 }
