@@ -61,7 +61,7 @@ config {
     quality {
         detekt {
             buildUponDefaultConfig = true
-            toolVersion = "1.4.0"
+            failFast = true
         }
     }
 }
