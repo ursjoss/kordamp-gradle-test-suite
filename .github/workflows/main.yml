@@ -20,9 +20,19 @@ jobs:
       matrix:
         # Abusing os/version as placeholders for the subproject and the gradle tasks
         os: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
-        version: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports]
+        version: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, aggregateDetekt]
+        exclude:
+          - os: 01_java_gradle_groovy
+            version: detekt
+          - os: 01_java_gradle_groovy
+            version: aggregateDetekt
+          - os: 02_java_gradle_kotlin_dsl
+            version: detekt
+          - os: 02_java_gradle_kotlin_dsl
+            version: aggregateDetekt
 
-    steps:
+
+ steps:
       - name: Checkout repository
         uses: actions/checkout@v1
 
