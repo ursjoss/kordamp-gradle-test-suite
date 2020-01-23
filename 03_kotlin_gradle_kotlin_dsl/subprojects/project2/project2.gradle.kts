@@ -15,17 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.kordamp.sample;
+plugins {
+    id("org.kordamp.gradle.integration-test")
+}
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
-public class DummyTest {
-
-    // without this dummy test, gradlew jacocoRootReport would fail
-    @Test
-    public void dummyTest() {
-        assertEquals(true, true);
-    }
+dependencies {
+    implementation(project(":project1"))
 }

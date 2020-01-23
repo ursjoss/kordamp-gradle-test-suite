@@ -15,18 +15,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import org.kordamp.gradle.plugin.settings.ProjectsExtension
+import org.kordamp.gradle.plugin.settings.SettingsPlugin
+
 pluginManagement {
     repositories {
         mavenLocal()
         jcenter()
         gradlePluginPortal()
     }
-    def kordampVersion = '0.32.0-SNAPSHOT'
     plugins {
-        id 'org.kordamp.gradle.project' version kordampVersion
-        id 'org.kordamp.gradle.guide' version kordampVersion
-        id 'org.kordamp.gradle.integration-test' version kordampVersion
-        id 'org.kordamp.gradle.functional-test' version kordampVersion
+        kotlin("jvm") version "1.3.61"
+        val kordampVersion = "0.32.0-SNAPSHOT"
+        id("org.kordamp.gradle.kotlin-project") version kordampVersion
+        id("org.kordamp.gradle.guide") version kordampVersion
+        id("org.kordamp.gradle.detekt") version kordampVersion
+        id("org.kordamp.gradle.integration-test") version kordampVersion
+        id("org.kordamp.gradle.functional-test") version kordampVersion
     }
 }
 
@@ -35,17 +40,17 @@ buildscript {
         mavenLocal()
         gradlePluginPortal()
     }
-    def kordampVersion = '0.32.0-SNAPSHOT'
+    val kordampVersion = "0.32.0-SNAPSHOT"
     dependencies {
-        classpath "org.kordamp.gradle:settings-gradle-plugin:$kordampVersion"
+        classpath("org.kordamp.gradle:settings-gradle-plugin:$kordampVersion")
     }
 }
 
-apply plugin: 'org.kordamp.gradle.settings'
+apply<SettingsPlugin>()
 
-rootProject.name = '01_java_gradle_groovy'
+rootProject.name = "03_kotlin_gradle_kotlin_dsl"
 
-projects {
-    layout = 'two-level'
-    directories = ['docs', 'subprojects']
+configure<ProjectsExtension> {
+    layout = "two-level"
+    directories = listOf("docs", "subprojects")
 }
