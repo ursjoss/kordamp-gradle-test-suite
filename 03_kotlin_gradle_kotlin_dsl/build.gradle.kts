@@ -75,10 +75,12 @@ allprojects {
 }
 
 subprojects {
-    apply<JavaPlugin>()
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-    dependencies {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-        testImplementation("junit:junit:4.12")
+    if (project.name != "guide") {
+        apply<JavaPlugin>()
+        apply(plugin = "org.jetbrains.kotlin.jvm")
+        dependencies {
+            implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+            testImplementation("junit:junit:4.12")
+        }
     }
 }

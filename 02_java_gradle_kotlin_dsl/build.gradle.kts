@@ -65,8 +65,10 @@ allprojects {
 }
 
 subprojects {
-    apply<JavaPlugin>()
-    dependencies {
-        testImplementation("junit:junit:4.12")
+    if (project.name != "guide") {
+        apply<JavaPlugin>()
+        dependencies {
+            testImplementation("junit:junit:4.12")
+        }
     }
 }

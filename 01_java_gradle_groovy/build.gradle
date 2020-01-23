@@ -64,9 +64,11 @@ allprojects {
 }
 
 subprojects {
-    apply plugin: 'java'
+    if (project.name != 'guide') {
+        apply plugin: 'java'
 
-    dependencies {
-        testCompile 'junit:junit:4.12'
+        dependencies {
+            testCompile 'junit:junit:4.12'
+        }
     }
 }
