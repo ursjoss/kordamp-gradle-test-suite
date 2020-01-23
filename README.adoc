@@ -1,3 +1,5 @@
+image:https://img.shields.io/github/license/ursjoss/kordamp-gradle-test-suite.svg[LICENSE, link=https://github.com/ursjoss/kordamp-gradle-test-suite/blob/master/LICENSE] image:https://github.com/ursjoss/kordamp-gradle-test-suite/workflows/Check/badge.svg?branch=master[Build Status, link=https://github.com/ursjoss/kordamp-gradle-test-suite/actions] image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_kordamp-gradle-test-suite&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_kordamp-gradle-test-suite]
+
 = Repository Description
 
 This repo contains a number of gradle projects with the purpose of
