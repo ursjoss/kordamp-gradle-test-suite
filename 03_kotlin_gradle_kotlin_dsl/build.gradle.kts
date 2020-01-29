@@ -19,6 +19,7 @@ plugins {
     kotlin("jvm")
     id("org.kordamp.gradle.kotlin-project")
     id("org.kordamp.gradle.detekt")
+    id("org.kordamp.gradle.sonar")
     java
 }
 
@@ -62,6 +63,10 @@ config {
         detekt {
             buildUponDefaultConfig = true
             failFast = true
+        }
+
+        sonar {
+            username = "ursjoss"
         }
     }
 }
