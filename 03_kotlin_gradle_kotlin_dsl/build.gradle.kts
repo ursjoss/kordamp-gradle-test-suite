@@ -19,7 +19,7 @@ plugins {
     kotlin("jvm")
     id("org.kordamp.gradle.kotlin-project")
     id("org.kordamp.gradle.detekt")
-    id("org.kordamp.gradle.sonar")
+//    id("org.kordamp.gradle.sonar")
     java
 }
 
@@ -65,9 +65,9 @@ config {
             failFast = true
         }
 
-        sonar {
-            username = "ursjoss"
-        }
+//        sonar {
+//            username = "ursjoss"
+//        }
     }
 }
 
