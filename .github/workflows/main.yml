@@ -18,18 +18,17 @@ jobs:
 
     strategy:
       matrix:
-        # Abusing os/version as placeholders for the subproject and the gradle tasks
-        os: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
-        version: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, aggregateDetekt]
+        project: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
+        check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, aggregateDetekt]
         exclude:
-          - os: 01_java_gradle_groovy
-            version: detekt
-          - os: 01_java_gradle_groovy
-            version: aggregateDetekt
-          - os: 02_java_gradle_kotlin_dsl
-            version: detekt
-          - os: 02_java_gradle_kotlin_dsl
-            version: aggregateDetekt
+          - project: 01_java_gradle_groovy
+            check: detekt
+          - project: 01_java_gradle_groovy
+            check: aggregateDetekt
+          - project: 02_java_gradle_kotlin_dsl
+            check: detekt
+          - project: 02_java_gradle_kotlin_dsl
+            check: aggregateDetekt
 
     steps:
       - name: Checkout repository
@@ -43,9 +42,9 @@ jobs:
       - name: Cache global .gradle folder
         uses: actions/cache@v1
         with:
-          path: ~/.gradle/caches
+          path: ~/.gradle
           key: global-gradle-${{ hashFiles('**/*.kt*') }}-${{ hashFiles('**/*.java') }}
 
       - name: Check with Gradle
-        run: ./gradlew clean ${{ matrix.version }} --no-daemon
-        working-directory: ${{ matrix.os }}
+        run: ./gradlew clean ${{ matrix.check }} --no-daemon
+        working-directory: ${{ matrix.project }}
