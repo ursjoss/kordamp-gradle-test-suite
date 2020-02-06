@@ -64,11 +64,13 @@ allprojects {
     }
 }
 
+val junitVersion: String by project
+
 subprojects {
     if (project.name != "guide") {
         apply<JavaPlugin>()
         dependencies {
-            testImplementation("junit:junit:4.12")
+            testImplementation("junit:junit:$junitVersion")
         }
     }
 }
