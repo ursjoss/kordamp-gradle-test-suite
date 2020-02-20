@@ -11,9 +11,9 @@
 Commands to be expected to run:
 
 ```
-gradlew clean check
-gradlew clean allTests
-gradlew clean aggregateJacocoMerge
-gradlew clean aggregateJacocoReport
-gradlew clean allJacocoReports
+./gradlew clean check
+./gradlew clean allTests
+./gradlew clean aggregateJacocoMerge
+./gradlew clean aggregateJacocoReport
+./gradlew clean allJacocoReports
 ```

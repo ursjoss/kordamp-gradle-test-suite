@@ -1,11 +1,11 @@
-image:https://img.shields.io/github/license/ursjoss/kordamp-gradle-test-suite.svg[LICENSE, link=https://github.com/ursjoss/kordamp-gradle-test-suite/blob/master/LICENSE] image:https://github.com/ursjoss/kordamp-gradle-test-suite/workflows/Check/badge.svg?branch=master[Build Status, link=https://github.com/ursjoss/kordamp-gradle-test-suite/actions] 
+image:https://img.shields.io/github/license/ursjoss/kordamp-gradle-test-suite.svg[LICENSE, link=https://github.com/ursjoss/kordamp-gradle-test-suite/blob/master/LICENSE] image:https://github.com/ursjoss/kordamp-gradle-test-suite/workflows/Check/badge.svg?branch=master[Build Status, link=https://github.com/ursjoss/kordamp-gradle-test-suite/actions]
 
-= Repository Description
+== Repository Description
 
 This repo contains a number of gradle projects with the purpose of
 testing several scenarios using the kordamp-gradle-plugin suite.
 
-== Project 01: Java, Gradle (groovy)
+=== Project 01: Java, Gradle (groovy)
 
 image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_01_kotlin_gradle_kotlin_dsl&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_01_kotlin_gradle_kotlin_dsl]
 
@@ -15,7 +15,11 @@ in the main source set. The other two submodules depend on the first one
 and integration-test (project2) or functional-test (project3) a production
 class from project1.
 
-== Project 02: Java, Gradle (kotlin DSL)
+```
+./gradlew -p 01_java_gradle_groovy tasks
+```
+
+=== Project 02: Java, Gradle (kotlin DSL)
 
 image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_02_kotlin_gradle_kotlin_dsl&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_02_kotlin_gradle_kotlin_dsl]
 
@@ -23,11 +27,19 @@ Java project with three gradle submodules (configured using kotlin DSL),
 two of them depending on the first, testing the code of project1 both
 using integration-tests and functional-tests.
 
+```
+./gradlew -p 02_java_gradle_kotlin_dsl tasks
+```
 
-== Project 03: Kotlin, Gralde (kotlin DSL)
+
+=== Project 03: Kotlin, Gralde (kotlin DSL)
 
 image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_03_kotlin_gradle_kotlin_dsl&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_03_kotlin_gradle_kotlin_dsl]
 
 kotlin project with three gradle submodules configured using kotlin DSL),
 two of them depending on the first, testing the code of project1 both
 using integration-tests and functional-tests.
+
+```
+./gradlew -p 03_kotlin_gradle_kotlin_dsl tasks
+```
