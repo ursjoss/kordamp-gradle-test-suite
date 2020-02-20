@@ -49,5 +49,4 @@ jobs:
           key: global-gradle-${{ hashFiles('**/*.kt*') }}-${{ hashFiles('**/*.java') }}
 
       - name: Check with Gradle
-        run: ./gradlew clean ${{ matrix.check }} --no-daemon
-        working-directory: ${{ matrix.project }}
+        run: ./gradlew -p ${{ matrix.project }} clean ${{ matrix.check }} --no-daemon
