@@ -19,18 +19,18 @@ jobs:
     strategy:
       matrix:
         project: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
-        check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, aggregateDetekt, sonar]
+        check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, detekt aggregateDetekt, sonar]
         exclude:
           - project: 01_java_gradle_groovy
             check: detekt
           - project: 01_java_gradle_groovy
-            check: aggregateDetekt
+            check: detekt aggregateDetekt
           - project: 01_java_gradle_groovy
             check: sonar
           - project: 02_java_gradle_kotlin_dsl
             check: detekt
           - project: 02_java_gradle_kotlin_dsl
-            check: aggregateDetekt
+            check: detekt aggregateDetekt
           - project: 02_java_gradle_kotlin_dsl
             check: sonar
 
