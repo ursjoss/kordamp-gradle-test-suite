@@ -15,10 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    id("org.kordamp.gradle.functional-test")
-}
-
 dependencies {
     implementation(project(":project1"))
     functionalTestImplementation("junit:junit:4.12")

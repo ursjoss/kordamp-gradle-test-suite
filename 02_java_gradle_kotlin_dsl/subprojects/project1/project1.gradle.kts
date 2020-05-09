@@ -15,10 +15,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    id("org.kordamp.gradle.integration-test")
-}
 
-dependencies {
-    testImplementation("junit:junit:4.12")
-}

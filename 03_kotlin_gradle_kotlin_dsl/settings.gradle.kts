@@ -18,37 +18,23 @@
 import org.kordamp.gradle.plugin.settings.ProjectsExtension
 import org.kordamp.gradle.plugin.settings.SettingsPlugin
 
-pluginManagement {
-    repositories {
-        mavenLocal()
-        jcenter()
-        gradlePluginPortal()
-    }
-
-    val kotlinVersion: String by settings
-    val kordampVersion: String by settings
-
-    plugins {
-        kotlin("jvm") version kotlinVersion
-        id("org.kordamp.gradle.kotlin-project") version kordampVersion
-        id("org.kordamp.gradle.guide") version kordampVersion
-        id("org.kordamp.gradle.detekt") version kordampVersion
-        id("org.kordamp.gradle.sonar") version kordampVersion
-        id("org.kordamp.gradle.integration-test") version kordampVersion
-        id("org.kordamp.gradle.functional-test") version kordampVersion
-    }
-}
-
 buildscript {
     repositories {
         mavenLocal()
         gradlePluginPortal()
     }
 
+    val kotlinVersion: String by settings
     val kordampVersion: String by settings
 
     dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+
         classpath("org.kordamp.gradle:settings-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:kotlin-project-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:guide-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:detekt-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:sonar-gradle-plugin:$kordampVersion")
     }
 }
 
@@ -57,6 +43,24 @@ apply<SettingsPlugin>()
 rootProject.name = "03_kotlin_gradle_kotlin_dsl"
 
 configure<ProjectsExtension> {
-    layout = "two-level"
-    directories = listOf("docs", "subprojects")
+    layout.set("two-level")
+    directories.addAll(listOf("docs", "subprojects"))
+
+    plugins {
+        path(":") {
+            id("java")
+            id("org.kordamp.gradle.kotlin-project")
+            id("org.kordamp.gradle.sonar")
+            id("org.kordamp.gradle.detekt")
+        }
+        path(":guide") {
+            id("org.kordamp.gradle.guide")
+        }
+        dir("subprojects") {
+            id("org.jetbrains.kotlin.jvm")
+        }
+        path(":project3") {
+            id("org.kordamp.gradle.functional-test")
+        }
+    }
 }

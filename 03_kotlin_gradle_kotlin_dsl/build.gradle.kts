@@ -15,13 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    kotlin("jvm")
-    id("org.kordamp.gradle.kotlin-project")
-    id("org.kordamp.gradle.detekt")
-    id("org.kordamp.gradle.sonar")
-    java
-}
+import org.kordamp.gradle.plugin.base.ProjectsExtension
 
 config {
     release = rootProject.findProperty("release").toString().toBoolean()
@@ -72,23 +66,24 @@ config {
 
 }
 
-allprojects {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        jcenter()
-    }
-}
-
 val junitVersion: String by project
 
-subprojects {
-    if (project.name != "guide") {
-        apply<JavaPlugin>()
-        apply(plugin = "org.jetbrains.kotlin.jvm")
-        dependencies {
-            implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-            testImplementation("junit:junit:$junitVersion")
+configure<ProjectsExtension> {
+    all {
+        path("*") {
+            repositories {
+                mavenLocal()
+                mavenCentral()
+                jcenter()
+            }
+        }
+
+        dir("subprojects") {
+            val junitVersion: String by project
+            dependencies {
+                implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+                testImplementation("junit:junit:$junitVersion")
+            }
         }
     }
 }
