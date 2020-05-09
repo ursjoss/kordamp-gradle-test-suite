@@ -15,11 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-plugins {
-    id("org.kordamp.gradle.project")
-    java
-}
-
 config {
     release = rootProject.findProperty("release").toString().toBoolean()
 
@@ -57,20 +52,19 @@ config {
     }
 }
 
-allprojects {
-    repositories {
-        mavenLocal()
-        jcenter()
-    }
-}
-
 val junitVersion: String by project
-
-subprojects {
-    if (project.name != "guide") {
-        apply<JavaPlugin>()
-        dependencies {
-            testImplementation("junit:junit:$junitVersion")
+projects {
+    all {
+        path("*") {
+            repositories {
+                mavenLocal()
+                jcenter()
+            }
+        }
+        dir("subprojects") {
+            dependencies {
+                testImplementation("junit:junit:$junitVersion")
+            }
         }
     }
 }

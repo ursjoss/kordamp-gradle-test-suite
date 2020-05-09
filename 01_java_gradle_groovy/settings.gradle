@@ -15,20 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-pluginManagement {
-    repositories {
-        mavenLocal()
-        jcenter()
-        gradlePluginPortal()
-    }
-    plugins {
-        id 'org.kordamp.gradle.project' version kordampVersion
-        id 'org.kordamp.gradle.guide' version kordampVersion
-        id 'org.kordamp.gradle.integration-test' version kordampVersion
-        id 'org.kordamp.gradle.functional-test' version kordampVersion
-    }
-}
-
 buildscript {
     repositories {
         mavenLocal()
@@ -36,6 +22,10 @@ buildscript {
     }
     dependencies {
         classpath "org.kordamp.gradle:settings-gradle-plugin:$kordampVersion"
+        classpath "org.kordamp.gradle:java-project-gradle-plugin:$kordampVersion"
+        classpath "org.kordamp.gradle:guide-gradle-plugin:$kordampVersion"
+        classpath "org.kordamp.gradle:integrationtest-gradle-plugin:$kordampVersion"
+        classpath "org.kordamp.gradle:functionaltest-gradle-plugin:$kordampVersion"
     }
 }
 
@@ -46,4 +36,22 @@ rootProject.name = '01_java_gradle_groovy'
 projects {
     layout = 'two-level'
     directories = ['docs', 'subprojects']
+
+    plugins {
+        path(':') {
+            id 'org.kordamp.gradle.java-project'
+        }
+        path(':guide') {
+            id 'org.kordamp.gradle.guide'
+        }
+        dir('subprojects') {
+            exclude(':project3')
+            id 'java-library'
+            id 'org.kordamp.gradle.integration-test'
+        }
+        path(':project3') {
+            id 'java-library'
+            id 'org.kordamp.gradle.functional-test'
+        }
+    }
 }
