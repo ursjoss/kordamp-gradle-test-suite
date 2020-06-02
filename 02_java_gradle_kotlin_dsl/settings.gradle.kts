@@ -73,9 +73,12 @@ configure<ProjectsExtension> {
             id("org.kordamp.gradle.guide")
         }
         dir("subprojects") {
+            exclude(":project3")
             id("org.jetbrains.kotlin.jvm")
+            id("org.kordamp.gradle.integration-test")
         }
         path(":project3") {
+            id("org.jetbrains.kotlin.jvm")
             id("org.kordamp.gradle.functional-test")
         }
     }

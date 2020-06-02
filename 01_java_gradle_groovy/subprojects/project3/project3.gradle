@@ -17,5 +17,5 @@
  */
 dependencies {
     implementation project(':project1')
-    functionalTestCompile 'junit:junit:4.12'
+    functionalTestCompile "junit:junit:$junitVersion"
 }

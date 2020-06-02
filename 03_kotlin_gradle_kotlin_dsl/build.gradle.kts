@@ -53,6 +53,12 @@ config {
         }
     }
 
+    coverage {
+        jacoco {
+            includeProjectDependencies = true
+        }
+    }
+
     quality {
         detekt {
             buildUponDefaultConfig = true
@@ -79,7 +85,6 @@ configure<ProjectsExtension> {
         }
 
         dir("subprojects") {
-            val junitVersion: String by project
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
                 testImplementation("junit:junit:$junitVersion")

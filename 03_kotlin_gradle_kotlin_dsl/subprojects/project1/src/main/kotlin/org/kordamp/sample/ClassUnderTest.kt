@@ -19,7 +19,13 @@ package org.kordamp.sample
 
 class ClassUnderTest private constructor() {
     companion object {
+        // called from project1 integrationTest
         fun method1(): String = "method1"
+
+        // called from project2 integrationTest
         fun method2(): String = "method2"
+
+        // called from project3 functionalTest
+        fun method3(): String = "method3"
     }
 }

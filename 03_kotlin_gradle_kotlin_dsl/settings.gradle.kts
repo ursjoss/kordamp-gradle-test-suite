@@ -33,6 +33,8 @@ buildscript {
         classpath("org.kordamp.gradle:settings-gradle-plugin:$kordampVersion")
         classpath("org.kordamp.gradle:kotlin-project-gradle-plugin:$kordampVersion")
         classpath("org.kordamp.gradle:guide-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:integrationtest-gradle-plugin:$kordampVersion")
+        classpath("org.kordamp.gradle:functionaltest-gradle-plugin:$kordampVersion")
         classpath("org.kordamp.gradle:detekt-gradle-plugin:$kordampVersion")
         classpath("org.kordamp.gradle:sonar-gradle-plugin:$kordampVersion")
     }
@@ -57,9 +59,12 @@ configure<ProjectsExtension> {
             id("org.kordamp.gradle.guide")
         }
         dir("subprojects") {
+            exclude(":project3")
             id("org.jetbrains.kotlin.jvm")
+            id("org.kordamp.gradle.integration-test")
         }
         path(":project3") {
+            id("org.jetbrains.kotlin.jvm")
             id("org.kordamp.gradle.functional-test")
         }
     }
