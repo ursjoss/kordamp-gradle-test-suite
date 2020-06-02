@@ -19,16 +19,20 @@ jobs:
     strategy:
       matrix:
         project: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
-        check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, detekt aggregateDetekt]
+        check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, detekt aggregateDetekt, detekt sonar]
         exclude:
           - project: 01_java_gradle_groovy
             check: detekt
           - project: 01_java_gradle_groovy
             check: detekt aggregateDetekt
+          - project: 01_java_gradle_groovy
+            check: detekt sonar
           - project: 02_java_gradle_kotlin_dsl
             check: detekt
           - project: 02_java_gradle_kotlin_dsl
             check: detekt aggregateDetekt
+          - project: 02_java_gradle_kotlin_dsl
+            check: detekt sonar
 
     steps:
       - name: Checkout repository
@@ -49,4 +53,4 @@ jobs:
           key: global-gradle-${{ hashFiles('**/*.kt*') }}-${{ hashFiles('**/*.java') }}
 
       - name: Check with Gradle
-        run: ./gradlew -p ${{ matrix.project }} clean ${{ matrix.check }} --no-daemon
+        run: ./gradlew -p ${{ matrix.project }} clean ${{ matrix.check }} --no-daemon -Dsonar.organization=ursjoss-github
