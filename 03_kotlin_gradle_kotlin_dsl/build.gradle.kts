@@ -67,6 +67,7 @@ config {
 
         sonar {
             username = "ursjoss"
+            configProperties["sonar.organization"] = "ursjoss-github"
         }
     }
 
@@ -83,7 +84,16 @@ configure<ProjectsExtension> {
                 jcenter()
             }
         }
-
+        path(":") {
+            tasks {
+                val aggregateDetekt by existing {
+                       dependsOn(subprojects.map { it.tasks.getByName("detekt") })
+                }
+                named("sonarqube").configure {
+                    dependsOn(aggregateDetekt)
+                }
+            }
+        }
         dir("subprojects") {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
