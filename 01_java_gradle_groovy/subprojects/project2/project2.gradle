@@ -17,4 +17,5 @@
  */
 dependencies {
     implementation project(':project1')
+    integrationTestCompile "junit:junit:$junitVersion"
 }

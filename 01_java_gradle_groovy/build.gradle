@@ -42,6 +42,12 @@ config {
         }
     }
 
+    coverage {
+        jacoco {
+            includeProjectDependencies = true
+        }
+    }
+
     licensing {
         enabled = true
         licenses {

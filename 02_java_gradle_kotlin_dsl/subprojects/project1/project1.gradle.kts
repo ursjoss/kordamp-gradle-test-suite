@@ -15,4 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+val junitVersion: String by project
+dependencies {
+    integrationTestImplementation("junit:junit:$junitVersion")
+}

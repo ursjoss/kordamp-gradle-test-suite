@@ -23,6 +23,6 @@ import org.junit.Test
 class FunctionalTest {
     @Test
     fun integration() {
-        assertEquals("method2", ClassUnderTest.method2())
+        assertEquals("method3", ClassUnderTest.method3())
     }
 }
