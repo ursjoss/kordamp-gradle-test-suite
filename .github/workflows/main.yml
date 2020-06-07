@@ -26,13 +26,13 @@ jobs:
           - project: 01_java_gradle_groovy
             check: detekt aggregateDetekt
           - project: 01_java_gradle_groovy
-            check: detekt sonar
+            check: detekt sonarqube
           - project: 02_java_gradle_kotlin_dsl
             check: detekt
           - project: 02_java_gradle_kotlin_dsl
             check: detekt aggregateDetekt
           - project: 02_java_gradle_kotlin_dsl
-            check: detekt sonar
+            check: detekt sonarqube
 
     steps:
       - name: Checkout repository
