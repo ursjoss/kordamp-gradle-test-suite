@@ -7,8 +7,6 @@ testing several scenarios using the kordamp-gradle-plugin suite.
 
 === Project 01: Java, Gradle (groovy)
 
-image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_01_kotlin_gradle_kotlin_dsl&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_01_kotlin_gradle_kotlin_dsl]
-
 Java project with three gradle submodules (configured using groovy),
 the first one using both unit and integration tests to test some classes
 in the main source set. The other two submodules depend on the first one
@@ -20,8 +18,6 @@ class from project1.
 ```
 
 === Project 02: Java, Gradle (kotlin DSL)
-
-image:https://sonarcloud.io/api/project_badges/measure?project=ursjoss_02_kotlin_gradle_kotlin_dsl&metric=alert_status[Quality Gate, link=https://sonarcloud.io/dashboard?id=ursjoss_02_kotlin_gradle_kotlin_dsl]
 
 Java project with three gradle submodules (configured using kotlin DSL),
 two of them depending on the first, testing the code of project1 both
