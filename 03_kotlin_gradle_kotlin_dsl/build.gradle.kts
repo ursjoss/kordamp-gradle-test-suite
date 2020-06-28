@@ -70,7 +70,6 @@ config {
             configProperties["sonar.organization"] = "ursjoss-github"
         }
     }
-
 }
 
 val junitVersion: String by project
@@ -87,7 +86,7 @@ configure<ProjectsExtension> {
         path(":") {
             tasks {
                 val aggregateDetekt by existing {
-                       dependsOn(subprojects.map { it.tasks.getByName("detekt") })
+                    dependsOn(subprojects.map { it.tasks.getByName("detekt") })
                 }
                 named("sonarqube").configure {
                     dependsOn(aggregateDetekt)
