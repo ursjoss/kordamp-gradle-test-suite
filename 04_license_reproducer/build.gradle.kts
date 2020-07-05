@@ -4,24 +4,20 @@ config {
     release = rootProject.findProperty("release").toString().toBoolean()
 
     info {
-        name = "Sample"
-        vendor = "Kordmap"
-        description = "sample project"
-        organization {
-            name = "Kordamp"
-            url = "https://kordamp.org"
-        }
+        name = "Kordamp License Reproducer"
+        vendor = "none"
+        description = "sample project to validate the license plugin when disabled"
 
         links {
-            website = "https://github.com/aalmiray/kordamp-gradle-plugins-workshop"
-            issueTracker = "https://github.com/aalmiray/kordamp-gradle-plugins-workshop/issues"
-            scm = "https://github.com/aalmiray/kordamp-gradle-plugins-workshop.git"
+            website = "https://github.com/ursjoss/kordamp-gradle-test-suite"
+            issueTracker = "https://github.com/ursjoss/kordamp-gradle-test-suite/issues"
+            scm = "https://github.com/ursjoss/kordamp-gradle-test-suite.git"
         }
 
         people {
             person {
-                id = "anonymous"
-                name = "Anonymous"
+                id = "ursjoss"
+                name = "Urs Joss"
                 roles = listOf("developer")
             }
         }
