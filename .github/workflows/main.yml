@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        project: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl]
+        project: [01_java_gradle_groovy, 02_java_gradle_kotlin_dsl, 03_kotlin_gradle_kotlin_dsl, 04_license_reproducer]
         check: [check, allTests, aggregateJacocoMerge, aggregateJacocoReport, allJacocoReports, detekt, detekt aggregateDetekt, detekt sonarqube]
         exclude:
           - project: 01_java_gradle_groovy
@@ -32,6 +32,8 @@ jobs:
           - project: 02_java_gradle_kotlin_dsl
             check: detekt aggregateDetekt
           - project: 02_java_gradle_kotlin_dsl
+            check: detekt sonarqube
+          - project: 04_license_reproducer
             check: detekt sonarqube
 
     steps:
