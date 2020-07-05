@@ -39,3 +39,14 @@ using integration-tests and functional-tests.
 ```
 ./gradlew -p 03_kotlin_gradle_kotlin_dsl tasks
 ```
+
+=== Project 04: Kotlin, Gralde (kotlin DSL)
+
+kotlin project with a single gradle submodules configured using kotlin DSL).
+You can use it to reproduce  https://github.com/kordamp/kordamp-gradle-plugins/issues/331[issue 331]
+present in kordamp-gradle-plugins 0.37.0 and 0.39.0.
+
+
+```
+./gradlew -p 04_license_reproducer check
+```
