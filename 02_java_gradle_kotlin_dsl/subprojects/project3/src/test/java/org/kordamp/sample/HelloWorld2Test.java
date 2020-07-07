@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
  *
- * Copyright 2020 Anonymous.
+ * Copyright 2020 Urs Joss.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@
  */
 package org.kordamp.sample;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HelloWorld2Test {
+class HelloWorld2Test {
     @Test
-    public void testSayHello() {
+    void testSayHello() {
         // given:
         HelloWorld2 hw = new HelloWorld2();
 

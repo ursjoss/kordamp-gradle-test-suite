@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
  *
- * Copyright 2020 Anonymous.
+ * Copyright 2020 Urs Joss.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
  */
 package org.kordamp.sample
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class HelloWorld1Test {
     @Test
@@ -27,6 +27,6 @@ class HelloWorld1Test {
         // when:
         val answer: String = hw.sayHello()
         // then:
-        Assert.assertEquals(answer, "Hello World")
+        assertEquals(answer, "Hello World")
     }
 }

@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
  *
- * Copyright 2020 Anonymous.
+ * Copyright 2020 Urs Joss.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,5 +18,5 @@
 val junitVersion: String by project
 dependencies {
     implementation(project(":project1"))
-    functionalTestImplementation("junit:junit:$junitVersion")
+    functionalTestImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }

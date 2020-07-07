@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: Apache-2.0
  *
- * Copyright 2020 Anonymous.
+ * Copyright 2020 Urs Joss.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,7 +65,19 @@ projects {
         }
         dir("subprojects") {
             dependencies {
-                testImplementation("junit:junit:$junitVersion")
+                testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+            }
+            java {
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
+            }
+            tasks {
+                withType<Test> {
+                    useJUnitPlatform()
+                    testLogging {
+                        events("passed", "skipped", "failed")
+                    }
+                }
             }
         }
     }
