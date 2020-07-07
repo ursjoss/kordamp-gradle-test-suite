@@ -33,7 +33,7 @@ config {
             person {
                 id = "ursjoss"
                 name = "Urs Joss"
-                roles = listOf("developer")
+                roles = ["developer"]
             }
         }
     }
