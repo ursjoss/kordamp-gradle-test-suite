@@ -17,8 +17,8 @@
  */
 package org.kordamp.sample
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class HelloWorld1Test {
     @Test
@@ -27,6 +27,6 @@ class HelloWorld1Test {
         // when:
         val answer: String = hw.sayHello()
         // then:
-        Assert.assertEquals(answer, "Hello World")
+        assertEquals(answer, "Hello World")
     }
 }

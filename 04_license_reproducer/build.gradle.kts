@@ -49,7 +49,7 @@ configure<ProjectsExtension> {
             val junitVersion: String by project
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-                testImplementation("junit:junit:$junitVersion")
+                testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
             }
         }
     }

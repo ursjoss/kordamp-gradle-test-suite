@@ -17,5 +17,5 @@
  */
 dependencies {
     implementation project(':project1')
-    functionalTestCompile "junit:junit:$junitVersion"
+    functionalTestCompile "org.junit.jupiter:junit-jupiter:$junitVersion"
 }

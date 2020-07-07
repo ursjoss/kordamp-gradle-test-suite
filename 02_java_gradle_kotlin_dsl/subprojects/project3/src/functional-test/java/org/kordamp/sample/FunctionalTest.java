@@ -17,13 +17,13 @@
  */
 package org.kordamp.sample;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class FunctionalTest {
+class FunctionalTest {
     @Test
-    public void integration() {
+    void integration() {
         assertEquals("method2", ClassUnderTest.method2());
     }
 }

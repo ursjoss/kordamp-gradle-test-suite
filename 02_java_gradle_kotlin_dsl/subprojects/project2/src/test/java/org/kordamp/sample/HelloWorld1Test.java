@@ -17,13 +17,13 @@
  */
 package org.kordamp.sample;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HelloWorld1Test {
+class HelloWorld1Test {
     @Test
-    public void testSayHello() {
+    void testSayHello() {
         // given:
         HelloWorld1 hw = new HelloWorld1();
 

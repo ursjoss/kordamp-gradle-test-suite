@@ -65,7 +65,15 @@ projects {
         }
         dir("subprojects") {
             dependencies {
-                testImplementation("junit:junit:$junitVersion")
+                testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+            }
+            tasks {
+                withType<Test> {
+                    useJUnitPlatform()
+                    testLogging {
+                        events("passed", "skipped", "failed")
+                    }
+                }
             }
         }
     }

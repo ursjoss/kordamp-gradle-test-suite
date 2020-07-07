@@ -17,17 +17,18 @@
  */
 package org.kordamp.sample
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 class HelloWorld2Test {
 
     @Test
-    fun testSayHello() { // given:
+    fun testSayHello() {
+        // given:
         val hw = HelloWorld2()
         // when:
         val answer = hw.sayHello()
         // then:
-        Assert.assertEquals(answer, "Hello World")
+        assertEquals(answer, "Hello World")
     }
 }

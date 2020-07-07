@@ -18,5 +18,5 @@
 val junitVersion: String by project
 dependencies {
     implementation(project(":project1"))
-    functionalTestImplementation("junit:junit:$junitVersion")
+    functionalTestImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
 }
