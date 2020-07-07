@@ -15,6 +15,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+plugins {
+    id 'java-library'
+}
+
 config {
     release = (rootProject.findProperty('release') ?: false).toBoolean()
 
@@ -56,10 +60,14 @@ config {
 
 projects {
     all {
-        path("*") {
+        path('*') {
             repositories {
                 mavenLocal()
                 jcenter()
+            }
+            java {
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
             }
         }
         dir('subprojects') {
