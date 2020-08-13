@@ -34,6 +34,10 @@ jobs:
           - project: 02_java_gradle_kotlin_dsl
             check: detekt sonarqube
           - project: 04_license_reproducer
+            check: detekt
+          - project: 04_license_reproducer
+            check: detekt aggregateDetekt
+          - project: 04_license_reproducer
             check: detekt sonarqube
 
     steps:
