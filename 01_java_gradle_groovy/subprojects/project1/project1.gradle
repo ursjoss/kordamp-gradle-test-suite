@@ -16,5 +16,5 @@
  * limitations under the License.
  */
 dependencies {
-    integrationTestCompile 'org.junit.jupiter:junit-jupiter:$junitVersion'
+    integrationTestCompile "org.junit.jupiter:junit-jupiter:$junitVersion"
 }
