@@ -63,8 +63,8 @@ config {
         }
 
         sonar {
-            username = "ursjoss"
-            configProperties["sonar.organization"] = "ursjoss-github"
+            login = "ursjoss"
+            organization = "ursjoss-github"
         }
     }
 }
