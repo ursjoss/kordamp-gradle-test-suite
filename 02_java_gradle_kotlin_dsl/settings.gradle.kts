@@ -44,7 +44,7 @@ apply<SettingsPlugin>()
 rootProject.name = "02_java_gradle_kotlin_dsl"
 
 configure<ProjectsExtension> {
-    layout.set("two-level")
+    setLayout("two-level")
     directories.addAll(listOf("docs", "subprojects"))
 
     plugins {
