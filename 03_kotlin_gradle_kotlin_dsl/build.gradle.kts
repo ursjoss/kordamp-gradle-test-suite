@@ -18,6 +18,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.kordamp.gradle.plugin.base.ProjectsExtension
 
+val sonarToken = System.getenv("SONAR_TOKEN") ?: ""
+
 config {
     release = rootProject.findProperty("release").toString().toBoolean()
 
@@ -63,9 +65,10 @@ config {
         }
 
         sonar {
-            login = "ursjoss"
+            hostUrl = "https://sonarcloud.io"
+            login = sonarToken
             organization = "ursjoss-github"
-            configProperties["sonar.username"] = "ursjoss"
+            projectKey = "ursjoss_${project.name}"
         }
     }
 }
