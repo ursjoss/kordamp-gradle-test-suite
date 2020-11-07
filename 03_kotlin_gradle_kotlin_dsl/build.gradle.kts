@@ -18,7 +18,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.kordamp.gradle.plugin.base.ProjectsExtension
 
-val sonarToken = System.getenv("SONAR_TOKEN") ?: ""
+val sonarToken = System.getenv("SONAR_TOKEN") ?: "n.a."
 
 config {
     release = rootProject.findProperty("release").toString().toBoolean()
