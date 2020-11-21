@@ -45,7 +45,7 @@ projects {
             id 'org.kordamp.gradle.guide'
         }
         dir('subprojects') {
-            exclude(':project3')
+            excludeDir(':project3')
             id 'java-library'
             id 'org.kordamp.gradle.integration-test'
         }
