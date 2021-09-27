@@ -58,7 +58,7 @@ config {
     }
 }
 
-projects {
+gradleProjects {
     all {
         path('*') {
             repositories {

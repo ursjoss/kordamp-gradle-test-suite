@@ -55,7 +55,7 @@ config {
 }
 
 val junitVersion: String by project
-projects {
+gradleProjects {
     all {
         path("*") {
             repositories {
